@@ -13,3 +13,11 @@ import './utils/accordeon.js';
 import './utils/replace.js';
 import './utils/lazyImages.js';
 import './utils/breadcrumbs.js';
+
+
+document.addEventListener('click', function (e) {
+    let targetEl = e.target;
+    if (targetEl.classList.contains('pages-close')) {
+        document.querySelector('.pages').classList.toggle('_hide');
+    }
+})

@@ -177,7 +177,7 @@ table {
     width: 100%;
     overflow: hidden;
     border-radius: 10px;
-    box-shadow: 0px 0px 85px 0px rgba(200, 200, 200, 0.5);
+    box-shadow: 0px 0px 85px 0px rgba(255, 255, 255, 0.5);
     border-collapse: unset;
     border-spacing: 0;
     margin-top: 35px;
@@ -227,6 +227,11 @@ table {
             @media (max-width: 768px) {
                 padding: 15px 10px;
             }
+
+            background: var(--Linear, linear-gradient(93deg, #FF008A 1.64%, #FF004D 99.71%));
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
     }
 
@@ -244,6 +249,10 @@ table {
             }
         }
 
+        & > :nth-child(2n) td {
+            background-color: #F3F3F3;
+        }
+
         & > :first-child {
 
             p,
@@ -258,6 +267,11 @@ table {
                 @media (max-width: 768px) {
                     vertical-align: middle;
                 }
+
+                background: var(--Linear, linear-gradient(93deg, #FF008A 1.64%, #FF004D 99.71%));
+                background-clip: text;
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
             }
         }
     }
@@ -302,61 +316,62 @@ table {
     }
 }
 
-.breadcambs {
-    @include adaptive-value("margin-bottom", 52, 30, 1);
+.details {
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 85px 0 rgba(200, 200, 200, 0.25);
+    background-color: #FFF;
+    margin-bottom: 30px;
 
-    ul {
-        display: flex;
-        align-items: center;
-        flex-wrap: wrap;
+    @media (max-width:768px) {
+        padding: 12px;
+    }
 
-        @media (max-width: 425px) {
-            flex-direction: column;
-            align-items: flex-start;
-        }
+    details {
+        summary {
+            font-weight: bold;
+            font-size: 20px;
+            cursor: pointer;
 
-        & > :not(:last-child) {
-            margin-right: 44px;
+            background: var(--Linear, linear-gradient(93deg, #FF008A 1.64%, #FF004D 99.71%));
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
 
-            @media (max-width: 425px) {
-                margin-right: 0;
-                margin-bottom: 8px;
+            &::marker {
+                color: #FF008A;
+            }
+
+            @media (max-width:768px) {
+                font-size: 16px;
             }
         }
 
-        li {
-            a {
-                color: #262626;
-                font-family: Oswald;
-                font-weight: 700;
-                text-transform: uppercase;
-                @include adaptive-value("font-size", 24, 16, 1);
+        &[open] {}
 
-                display: flex;
-                align-items: center;
+        &[open] summary {
+            border-bottom: 1px solid #f5f5f5;
+            margin-bottom: 0.75em;
+            padding-bottom: 0.75em;
+        }
 
-                span {
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    flex: 0 0 auto;
-                    border-radius: 50%;
-                    background: linear-gradient(133deg, #ff008a 0%, #ff004d 100%);
+        a {
+            width: fit-content;
+            display: block;
+            color: #0085ff;
+            border-bottom: 1px solid currentColor;
+            transition: all 0.3s ease 0s;
+            margin-bottom: 6px;
+            font-size: 16px;
+            font-weight: 400;
+            font-family: Nunito;
 
-                    margin-left: 20px;
+            @media (max-width:768px) {
+                font-size: 14px;
+            }
 
-                    @include adaptive-value("width", 40, 23, 1);
-                    @include adaptive-value("height", 40, 23, 1);
-
-                    @media (max-width: 768px) {
-                        margin-left: 16px;
-                    }
-
-                    svg {
-                        width: 32.5%;
-                        margin-left: 10%;
-                    }
-                }
+            &:hover {
+                color: #ff008a;
             }
         }
     }
