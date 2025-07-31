@@ -1,0 +1,202 @@
+.wp-block-columns {
+    width: 100%;
+    margin-inline: auto;
+    max-width: 1720px;
+    @include adaptive-value("margin-bottom", 70, 40, 1);
+
+    @media (max-width: 1780px) {
+        max-width: none;
+        padding-inline: 30px;
+    }
+
+    @media (max-width: 1024px) {
+        padding-inline: 15px;
+    }
+
+    @media (max-width: 768px) {
+        padding-inline: 10px;
+    }
+
+
+    &._max-width1024 {
+        .wp-block-column {
+            max-width: 1024px;
+        }
+    }
+
+    &._max-width1200 {
+        .wp-block-column {
+            max-width: 1200px;
+        }
+    }
+
+    p {
+        margin-top: 15px;
+        margin-bottom: 15px;
+
+        font-size: 20px;
+        font-family: Nunito;
+
+        @media (max-width: 768px) {
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+        a {
+            color: #0085ff;
+            border-bottom: 1px solid currentColor;
+            transition: all 0.3s ease 0s;
+
+            @media (any-hover: hover) {
+                &:hover {
+                    color: #ff008a;
+                }
+            }
+        }
+    }
+
+    .accordion {
+        @include adaptive-value("margin-top", 50, 30, 1);
+    }
+
+    h2 {
+        @include adaptive-value("margin-bottom", 50, 30, 1);
+    }
+
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-weight: 700;
+        text-transform: uppercase;
+        @include adaptive-value("font-size", 24, 20, 1);
+        margin-bottom: 1em;
+    }
+
+    img {
+        margin-top: 25px;
+        max-width: 100%;
+        height: auto;
+
+        @media (max-width: 768px) {
+            margin-top: 20px;
+        }
+    }
+
+    &:not(:has(.flex__check)) {
+        ol,
+        ul {
+            font-size: 20px;
+            font-family: Nunito;
+            margin-bottom: 40px;
+
+            @media (max-width: 768px) {
+                font-size: 18px;
+            }
+
+            @media (min-width: 769px) {
+                padding-left: 2.6vw;
+            }
+
+            & > :not(:last-child) {
+                margin-bottom: 10px;
+            }
+
+            a {
+                color: #0085ff;
+                border-bottom: 1px solid currentColor;
+                transition: all 0.3s ease 0s;
+
+                @media (any-hover: hover) {
+                    &:hover {
+                        color: #ff008a;
+                    }
+                }
+            }
+
+            p {
+                margin: 0 !important;
+            }
+
+            li {
+                position: relative;
+                padding-left: 1.2em;
+
+                &:before {
+                    width: 9px;
+                    height: 9px;
+                    flex: 0 0 auto;
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                }
+            }
+        }
+
+        ol {
+            counter-reset: num;
+
+            li {
+                counter-increment: num;
+
+                &:before {
+                    content: counter(num) ".";
+                }
+            }
+        }
+
+        ul {
+            li {
+                &:before {
+                    content: "";
+                    border-radius: 50%;
+                    background: linear-gradient(133deg, #ff008a 0%, #ff004d 100%);
+                    top: 6px;
+                }
+            }
+        }
+    }
+
+    &.is-layout-flex {
+        display: flex;
+
+        &._revesrse {
+            flex-direction: row-reverse;
+        }
+
+        @media (max-width: 768px) {
+            display: block;
+        }
+    }
+
+    .is-layout-flow {
+        &:not(:last-child) {
+            margin-right: 35px;
+
+            @media (max-width: 768px) {
+                margin-right: 0;
+            }
+        }
+
+        @media (max-width: 768px) {
+            margin-top: 20px;
+            flex: unset;
+            margin-inline: auto;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        &:only-child {
+            img {
+                margin: 20px 0 0 0;
+            }
+        }
+    }
+}
+
+.wp-block-table {
+    overflow-x: unset !important;
+}

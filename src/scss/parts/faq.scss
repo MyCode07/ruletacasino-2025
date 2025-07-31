@@ -1,0 +1,51 @@
+.faq {
+    @include adaptive-value("margin-bottom", 90, 40, 1);
+
+    // .faq__container
+
+    &__container {
+    }
+
+    // .faq__body
+
+    &__body {
+        h2 {
+            @include adaptive-value("margin-bottom", 50, 30, 1);
+        }
+
+        p {
+        }
+    }
+
+    .accordion {
+        @media (min-width: 769px) {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            max-width: 1440px;
+            column-gap: 22px;
+        }
+
+        // .accordion__item
+
+        &__item {
+            // .accordion__item-title
+
+            &-title {
+            }
+
+            // .accordion__item-content
+
+            &-content {
+            }
+        }
+    }
+
+    .accordion__flex {
+        display: block;
+
+        .accordion__item{
+            max-width: 1240px;
+            width: 100%;
+        }
+    }
+}

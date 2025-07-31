@@ -1,0 +1,292 @@
+.passo {
+    position: relative;
+
+    @include adaptive-value("padding-top", 160, 30, 1);
+    @include adaptive-value("padding-bottom", 220, 30, 1);
+    @include adaptive-value("margin-bottom", 70, 40, 1);
+
+    // .passo-color
+
+    &-color {
+        @include adaptive-value("padding-top", 50, 40, 1);
+        @include adaptive-value("padding-bottom", 50, 40, 1);
+        background-color: #0b0b0b;
+    }
+
+    // .passo-card
+
+    &-card {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1;
+
+        &#card-1 {
+            @include adaptive-value("width", 123, 120, 1);
+            top: -12%;
+
+            @media (max-width: 1024px) {
+                display: none;
+            }
+        }
+
+        &#card-2 {
+            top: -20px;
+            left: 75%;
+
+            @media (max-width: 768px) {
+                left: 0;
+                width: 29px;
+            }
+        }
+
+        &#card-3 {
+            top: 91%;
+            left: 45%;
+
+            @media (max-width: 768px) {
+                left: -8%;
+                top: 94%;
+            }
+        }
+
+        &#card-4 {
+            top: 90%;
+            right: 0;
+            left: unset;
+            @include adaptive-value("width", 115, 78, 1);
+
+            @media (max-width: 768px) {
+                top: 23%;
+                right: -5%;
+            }
+        }
+
+        &#flesh-1 {
+            left: unset;
+            right: 107px;
+            top: 25px;
+
+            @media (max-width: 1200px) {
+                right: 50px;
+            }
+
+            @media (max-width: 768px) {
+                display: none;
+            }
+        }
+
+        &#flesh-2 {
+            left: 115px;
+            top: 90%;
+
+            @media (max-width: 1200px) {
+                left: 50px;
+            }
+
+            @media (max-width: 1024px) {
+                display: none;
+            }
+        }
+    }
+
+    // .passo-bgc
+
+    &-bgc {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: -1;
+    }
+
+    // .passo-cards
+
+    &-cards {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: -1;
+
+        @media (max-width: 768px) {
+            top: -16px;
+            height: calc(100% + 32px);
+        }
+    }
+
+    // .passo__container
+
+    &__container {
+        position: relative;
+        z-index: 2;
+    }
+
+    // .passo__body
+
+    &__body {
+    }
+
+    // .passo__top
+
+    &__top {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 0 10px;
+
+        h2 {
+            color: #fff;
+            text-align: center;
+
+            @media (max-width: 425px) {
+                text-align: left;
+            }
+        }
+
+        p {
+            max-width: 1194px;
+            width: 100%;
+            color: #fff;
+            text-align: center;
+            margin-top: 15px;
+            margin-bottom: 50px;
+
+            @media (max-width: 425px) {
+                text-align: left;
+            }
+        }
+    }
+
+    // .passo__flex
+
+    &__flex {
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        gap: 4vw;
+
+        @media (max-width: 1200px) {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        @media (max-width: 768px) {
+            display: block;
+            gap: 0;
+
+            & > :not(:last-child) {
+                margin-bottom: 30px;
+            }
+        }
+
+        // .passo__flex-item
+
+        &-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+            @media (max-width: 1200px) {
+                flex-direction: row;
+                align-items: flex-start;
+            }
+        }
+
+        // .passo__flex-image
+
+        &-image {
+            position: relative;
+
+            @media (max-width: 1200px) {
+                margin-right: 15px;
+            }
+
+            img {
+                @include adaptive-value("width", 142, 99, 1);
+            }
+
+            span {
+                display: block;
+                position: absolute;
+                bottom: -5px;
+                left: 50%;
+                transform: translate(-50%, 0);
+                color: #fff;
+                @include adaptive-value("font-size", 20, 16, 1);
+                font-family: Oswald;
+                font-weight: 700;
+
+                @media (max-width: 768px) {
+                    bottom: -2px;
+                }
+
+                &:after {
+                    position: absolute;
+                    content: "";
+                    bottom: -12px;
+                    left: 50%;
+                    transform: translate(-50%, 0);
+                    width: 46px;
+                    height: 46px;
+                    z-index: -1;
+                    border-radius: 46px;
+                    border: 7px solid #0b0b0b;
+                    background: var(--linear, linear-gradient(133deg, #ff008a 0%, #ff004d 100%));
+
+                    @media (max-width: 768px) {
+                        width: 40px;
+                        height: 40px;
+                        border: 3px solid #0b0b0b;
+                        bottom: -10px;
+                    }
+                }
+            }
+        }
+
+        // .passo__flex-info
+
+        &-info {
+            h3 {
+                text-align: center;
+                padding-top: 21px;
+                @include adaptive-value("padding-bottom", 35, 5, 1);
+                color: #fff;
+                font-size: 24px;
+                font-family: Oswald;
+                font-weight: 700;
+                text-transform: uppercase;
+
+                @media (max-width: 1200px) {
+                    text-align: left;
+                    padding-top: 0;
+                }
+
+                @media (max-width: 768px) {
+                    font-size: 20px;
+                }
+            }
+
+            p {
+                max-width: 270px;
+                width: 100%;
+                text-align: center;
+                color: #fff;
+
+                @media (max-width: 1200px) {
+                    text-align: left;
+                }
+
+                @media (max-width:600px){
+                    font-size: 16px;
+                }
+            }
+        }
+    }
+}

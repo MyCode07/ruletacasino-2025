@@ -1,0 +1,270 @@
+.popup {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    left: 0;
+    top: 0;
+
+    display: flex;
+    flex-direction: column;
+
+    overflow-y: auto;
+
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: all 0.3s ease 0s;
+
+    &._open {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: all;
+    }
+
+    // .popup__header
+
+    &__header {
+        background-image: url("@img/game-popup-header.png");
+        background-repeat: no-repeat;
+        background-size: cover;
+
+        // .popup__header-container
+
+        &-container {
+        }
+
+        // .popup__header-body
+
+        &-body {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            @include adaptive-value("padding-top", 33, 16, 1);
+            @include adaptive-value("padding-bottom", 33, 16, 1);
+
+            h4 {
+                color: #fff;
+                font-weight: 700;
+                text-transform: uppercase;
+                @include adaptive-value("font-size", 36, 18, 1);
+            }
+        }
+
+        // .popup__header-actions
+
+        &-actions {
+            display: flex;
+            align-items: center;
+
+            & > :not(:last-child) {
+                @include adaptive-value("margin-right", 50, 28, 1);
+            }
+
+            button {
+                img {
+                    pointer-events: none;
+
+                    @include adaptive-value("width", 27, 18, 1);
+                    @include adaptive-value("height", 27, 18, 1);
+                }
+            }
+        }
+
+        // .popup__header-fullscreen
+
+        &-fullscreen {
+        }
+
+        // .popup__header-close
+
+        &-close {
+        }
+    }
+
+    // .popup__body
+
+    &__body {
+        flex: 1 1 auto;
+        position: relative;
+        background-color: #f6f6f6;
+
+        iframe {
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    // .popup__footer
+
+    &__footer {
+        background-color: #fff;
+
+        &._active {
+            .popup__footer-height {
+                max-height: 0;
+                overflow: hidden;
+            }
+        }
+
+        // .popup__footer-toggle
+
+        &-toggle {
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translate(-50%, 0);
+
+            width: 40px;
+            height: 20px;
+            background-color: #fff;
+            box-shadow: 0px 0px 85px 0px rgba(200, 200, 200, 0.25);
+
+            clip-path: ellipse(50% 100% at 50% 100%);
+
+            span {
+                position: absolute;
+                left: 25%;
+                top: 50%;
+                width: 50%;
+                height: 2px;
+                border-radius: 100px;
+                background-color: #262626;
+                transition: all 0.3s ease 0s;
+            }
+
+            & > :first-child {
+                transform: rotate(-45deg);
+            }
+
+            & > :last-child {
+                transform: rotate(45deg);
+            }
+
+            &._active {
+                span {
+                    width: 40%;
+                }
+
+                & > :first-child {
+                    transform: rotate(-45deg);
+                    left: 17.5%;
+                }
+
+                & > :last-child {
+                    transform: rotate(45deg);
+                    left: 42.5%;
+                }
+            }
+        }
+
+        // .popup__footer-height
+
+        &-height {
+            max-height: 100vh;
+            transition: all 0.5s ease 0s;
+        }
+
+        // .popup__footer-container
+
+        &-container {
+        }
+
+        // .popup__footer-body
+
+        &-body {
+            padding-top: 50px;
+            padding-bottom: 50px;
+
+            @media (max-width: 768px) {
+                padding-top: 40px;
+                padding-bottom: 40px;
+            }
+        }
+
+        article {
+            border-radius: 0;
+            background: unset;
+            box-shadow: unset;
+            padding: 0;
+            flex-wrap: nowrap;
+            justify-content: flex-start;
+
+            @media (min-width: 1025px) {
+                & > :not(:last-child) {
+                    margin-right: 40px;
+                }
+            }
+
+            @media (max-width: 1024px) {
+            }
+
+            h3 {
+                @media (max-width: 1024px) {
+                }
+            }
+
+            div {
+                span {
+                    @media (max-width: 1024px) {
+                    }
+                }
+
+                label {
+                }
+            }
+
+            .casino {
+                // .casino-logo
+
+                &-logo {
+                    img {
+                    }
+
+                    @media (max-width: 1024px) {
+                    }
+                }
+
+                // .casino-rating
+
+                &-rating {
+                    img {
+                    }
+
+                    i {
+                    }
+
+                    @media (max-width: 1024px) {
+                    }
+                }
+
+                // .casino-bonus
+
+                &-bonus {
+                    flex: 1 1 auto;
+                    margin-left: 10vw;
+
+                    @media (max-width: 1440px) {
+                        margin-left: 6vw;
+                    }
+
+                    @media (max-width: 1200px) {
+                        margin-left: 0;
+                    }
+                }
+
+                // .casino-buttons
+
+                &-buttons {
+                    flex: 1 1 auto;
+                }
+            }
+
+            a.read {
+                border: 2px solid #262626;
+                color: #262626;
+            }
+        }
+    }
+}

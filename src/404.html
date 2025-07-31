@@ -1,0 +1,34 @@
+@@include('./html/head.html', {
+"title":"Ошибка 404 Ничего не найдено",
+})
+@@include('html/header.html')
+
+<main class="empty">
+
+    <section class="main error-404">
+        <div class="main__container _container">
+            <div class="main__body">
+                <div class="main__top">
+                    <h1>404 <span>Nothing found</span></h1>
+                    <button class="main__sidebar-open">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+                <div class="main__flex">
+                    <div class="main__content">
+                    </div>
+                    @@include('html/sidebar.html')
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+</main>
+
+@@include('html/footer.html')
+@@include('html/scripts.html')

@@ -1,0 +1,37 @@
+.payment {
+    @include adaptive-value("margin-bottom", 100, 40, 1);
+
+    // .payment__container
+
+    &__container {
+    }
+
+    // .payment__body
+
+    &__body {
+    }
+
+    // .payment__info
+    &__info {
+        @include adaptive-value("margin-bottom", 35, 41, 1);
+
+        margin-top: 15px;
+        max-width: 1448px;
+        width: 100%;
+
+        & > :not(:last-child) {
+            margin-bottom: 10px;
+        }
+
+        li {
+            color: #0b0b0b;
+            font-family: Montserrat;
+        }
+    }
+
+    // .payment__methods
+
+    &__methods {
+       
+    }
+}
