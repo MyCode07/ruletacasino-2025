@@ -102,6 +102,10 @@
         display: block;
         margin-right: 20px;
 
+        img {
+            object-fit: contain;
+        }
+
         .logo {
             @include adaptive-value("width", 177, 69, 1);
         }

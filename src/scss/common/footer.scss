@@ -40,6 +40,10 @@
             margin-bottom: 36px;
         }
 
+        img {
+            object-fit: contain;
+        }
+
         .logo {
             @include adaptive-value("width", 220, 182, 1);
         }
@@ -82,7 +86,7 @@
                 height: 20px;
 
                 @media (max-width: 768px) {
-                   height: 25px;
+                    height: 25px;
                 }
             }
         }
