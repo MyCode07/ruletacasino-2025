@@ -84,6 +84,7 @@
     }
 
     &:not(:has(.flex__check)) {
+
         ol,
         ul {
             font-size: 20px;
@@ -199,4 +200,41 @@
 
 .wp-block-table {
     overflow-x: unset !important;
+}
+
+
+.similar {
+    h2 {
+        text-align: center;
+    }
+
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+        background: unset !important;
+
+        @media (max-width:1024px) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        @media (max-width:600px) {
+            gap: 30px;
+            grid-template-columns: 1fr;
+        }
+
+        img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            min-height: 180px;
+            border-radius: 5px;
+        }
+
+        h3 {
+            @include adaptive-value('font-size', 32, 24, 1);
+            margin-bottom: 0.6em;
+            margin-top: 0.3em;
+        }
+    }
 }

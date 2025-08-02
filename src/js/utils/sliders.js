@@ -6,7 +6,7 @@ const casinoSliderSlides = document.querySelectorAll('.casino-slider .swiper .sw
 if (casinoSliderSlides.length) {
     new Swiper(casinoSlider, {
         modules: [Autoplay, Lazy],
-        loop: true,
+        loop: false,
         slidesPerView: 'auto',
         autoplay: {
             delay: 1000,
@@ -43,7 +43,7 @@ const rouletteSliderSlides = document.querySelectorAll('.roulette-slider .swiper
 if (rouletteSliderSlides.length) {
     new Swiper(rouletteSlider, {
         modules: [Autoplay],
-        loop: true,
+        loop: false,
         slidesPerView: 'auto',
         autoplay: {
             delay: 1000,
@@ -80,7 +80,7 @@ const darkSliderSlides = document.querySelectorAll('.dark-slider .swiper .swiper
 if (darkSliderSlides.length) {
     new Swiper(darkSlider, {
         modules: [Autoplay],
-        loop: true,
+        loop: false,
         slidesPerView: 'auto',
         autoplay: {
             delay: 1000,

@@ -1,0 +1,12 @@
+html :where(.wp-block){
+    max-width: 1200px !important;
+}
+
+html .edit-post-visual-editor__post-title-wrapper{
+    margin-bottom: 100px !important;
+}
+
+html .is-root-container > div.wp-block{
+    margin-bottom: 100px !important;
+    border: #adb2ad solid 1px;
+}
