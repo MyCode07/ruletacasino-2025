@@ -479,8 +479,8 @@
 
     &.casino-review {
         .hero__left {
-            div {
-                span {
+            & > div {
+                & > span {
                     display: block;
                     color: #fff;
                     font-weight: 700;
